@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ready: true,
+      ready: false,
       placeholder: "number of cats to trade"
     };
 
@@ -23,6 +23,9 @@ class App extends Component {
     this.setState({ ready: !this.state.ready });
   };
 
+  componentDidMount = () => {
+    this.setState({ready: true})
+  } 
   render() {
     if (this.state.ready) {
       return (
